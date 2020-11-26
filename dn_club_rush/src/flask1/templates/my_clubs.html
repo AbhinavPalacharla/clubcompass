@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Compass</title>
+    <link rel="stylesheet" href="../static/nav-styles.css">
+    <link rel="stylesheet" href="../static/loading-styles.css">
+    <link rel="stylesheet" href="../static/home-styles.css">
+    <link rel="stylesheet" href="../static/cards-styles.css">
+    <link rel="stylesheet" href="../static/myclubs-styles.css">
+    <link rel="stylesheet" href="../static/footer-styles.css">
+    <link rel="stylesheet" href="../static/fontcss/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-------------------- NAV BAR -------------------->
+    <div class="navbar">
+        <header>
+            <a href="home.html"><img class="logo" src="" alt="logo"></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/delnorte">Home</a></li>
+                    <li><a href="/delnorte/find_clubs">Find Clubs</a></li>
+                    <li><a href="/delnorte/my_clubs">My Clubs</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="#"><button class="nav-button">Contacts</button></a>
+        </header>
+    </div>
+
+    <!-------------------- Title -------------------->
+    <div class="title">
+        <h1>
+            {{ firstname }}'s Clubs
+        </h1>
+        <p class="sub">
+            The clubs you are signed up for right now.
+        </p>
+    </div>
+
+    <!-------------------- CLUB CARDS -------------------->
+    <main>
+        <section class="cards">
+            {% for i in clubs %}
+            <div class="card">
+                <div class="card__title">
+                    <h1> {{ i.get("name") }} </h1> 
+                </div>
+                <div class="card__content">
+                    <p class="card__section text--bold">
+                        President:
+                    </p>
+                    <p class="text--reg">
+                        {{ i.get("president") }}
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Meeting Times:
+                    </p>
+                    <p class="text--reg">
+                        {{ i.get("meeting_times") }}
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Email:
+                    </p>
+                    <p class="text--reg">
+                        {{ i.get("email") }}
+                    </p>
+                    <br>
+                    <br>
+                        <p class="card__desc">
+                            Description:
+                        </p>
+                        <p class="text--light">
+                            {{ i.get("description") }}
+                        </p>
+                    </div>
+                    <div class="sign">
+                        <button id="signup" onclick="testing('{{ firstname }}', '{{ lastname }}', '{{ email }}', '{{ i.get('name') }}')">Remove</button>
+                    </div> 
+                </div>
+                
+            </div>
+            {% endfor %}
+
+            <script type="text/javascript">
+                function testing(fname, lname, email_addr, club_name) {
+                    $(document).ready(function() {
+                        $(function() {
+                            console.log("button press registered");
+                            
+                            var info = {
+                                firstname: fname,
+                                lastname: lname,
+                                email: email_addr,
+                                club: club_name
+                            }
+
+                            console.log("button press registered")
+
+                            $.ajax({
+                                type: "POST",
+                                url: "/delnorte/remove_user",
+                                data: info
+                            });  
+                        });
+                    });
+                }
+            </script>
+
+        </section>
+    </main>
+
+    <!-------------------- FOOTER -------------------->
+    <footer>
+        <p>Copyright © ClubCompass 2020 | Made with  <i class="fas fa-heart" style="color: #FF3D3D"></i> by: Andrew Hale, Abhinav Palacharla, and Andrew de la Pena</p>
+    </footer>
+</body>
+</html>

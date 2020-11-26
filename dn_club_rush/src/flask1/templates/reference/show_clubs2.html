@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Del Norte Clubs</title>
+    <link rel="stylesheet" href="../static/cards-styles.css">
+    <link rel="stylesheet" href="../static/user-input-styles.css">
+    <link rel="stylesheet" href="../static/interests-styles.css">
+    <link rel="stylesheet" href="../static/fontcss/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <span class="cbox-title">
+            Filter by interests
+        </span>
+        <form class="cboxtags" action="#" method="POST">
+            {% for i in interest_list %}
+            <li><input name="interests" type="checkbox" id="{{ i.get('name') }}" value="{{ i.get('name') }}"><label for="{{ i.get('name') }}">{{ i.get('name') }}</label></li>
+            {% endfor %}
+            <button class="apply-filters">Apply</button>
+        </form>
+      </div>
+    <main>
+        <section class="cards">
+            {% for i in clubs %}
+            <div class="card">
+                <div class="card__title">
+                    <h1> {{ i.get("name") }} </h1> 
+                </div>
+                <div class="card__content">
+                    <p class="card__section text--bold">
+                        President:
+                    </p>
+                    <p class="text--reg">
+                        {{ i.get("president") }}
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Meeting Times:
+                    </p>
+                    <p class="text--reg">
+                        {{ i.get("meeting_times") }}
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Email:
+                    </p>
+                    <p class="text--reg">
+                        {{ i.get("email") }}
+                    </p>
+                    <br>
+                    <br>
+                        <p class="card__desc">
+                            Description:
+                        </p>
+                        <p class="text--light">
+                            {{ i.get("description") }}
+                        </p>
+                    </div>
+                    <div class="sign">
+                        <button id="signup_btn" onclick="testing('{{ firstname }}', '{{ lastname }}', '{{ email }}', '{{ i.get('name') }}')">Signup</button>
+                    </div> 
+                </div>
+                
+            </div>
+            {% endfor %}
+
+            <script type="text/javascript">
+                function testing(fname, lname, email_addr, club_name) {
+                    $(document).ready(function() {
+                        $(function() {
+                            console.log("button press registered");
+                            
+                            var info = {
+                                firstname: fname,
+                                lastname: lname,
+                                email: email_addr,
+                                club: club_name
+                            }
+
+                            console.log("button press registered")
+
+                            $.ajax({
+                                type: "POST",
+                                url: "/signup_user",
+                                data: info
+                            });  
+                        });
+                    });
+                }
+            </script>
+
+        </section>
+    </main>
+</body>
+</html>

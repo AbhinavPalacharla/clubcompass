@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Catalog</title>
+    <link rel="stylesheet" href="../static/cards-styles.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+    <main>
+        <section class="cards">
+			{% for i in clubs %}
+            <div class="card">
+                <div class="card__title">
+                    <h1> {{ i[0] }} </h1>
+                </div>
+                <div class="card__content">
+                    <p class="card__section text--bold">
+                        President:
+                    </p>
+                    <p class="text--reg">
+                        {{ i[2] }}
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Meeting Times:
+                    </p>
+                    <p class="text--reg">
+                        {{ i[4] }}
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Location:
+                    </p>
+                    <p class="text--reg">
+                        {{ i[5] }}
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Email:
+                    </p>
+                    <p class="text--reg">
+                        {{ i[3] }}
+                    </p>
+                    <br>
+                    <br>
+                        <p class="card__desc">
+                            Description:
+                        </p>
+                        <p class="text--light">
+                            {{ i[6] }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+			{% endfor %}
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,51 @@
+version: "3"
+
+services: 
+    flask1:
+        build: ./src/flask1
+        command: python3 server.py
+        ports:
+            - "5001:5000"
+        links: 
+            - db
+        depends_on:
+            - db
+    flask2:
+        build: ./src/flask2
+        command: python3 server.py
+        ports:
+            - "5002:5000"
+        links:
+            - db
+        depends_on: 
+            - db
+    flask3:
+        build: ./src/flask3
+        command: python3 server.py
+        ports:
+            - "5003:5000"
+        links:
+            - db
+        depends_on: 
+            - db
+    flask4:
+        build: ./src/flask4
+        command: python3 server.py
+        ports:
+            - "5004:5000"
+        links:
+            - db
+        depends_on: 
+            - db
+    db:
+        image: mongo:latest
+    nginx:
+        build: ./src/nginx
+        ports:
+            - "80:80"
+        depends_on: 
+            - flask1
+            - flask2
+            - flask3
+            - flask4
+            - db

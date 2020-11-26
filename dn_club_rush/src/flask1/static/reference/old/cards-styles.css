@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: white;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr repeat(12, minmax(auto, 60px)) 1fr;
+    grid-gap: 40px;
+    padding: 60px 0;
+}
+
+
+.container {
+    max-width: 1000px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+form.ks-cboxtags {
+    list-style: none;
+    padding: 20px;
+    align-items: center;
+}
+
+form.ks-cboxtags li{
+  display: inline;
+}
+
+form.ks-cboxtags li label{
+    display: inline-block;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px solid rgba(139, 139, 139, .3);
+    color: #adadad;
+    border-radius: 25px;
+    white-space: nowrap;
+    margin: 3px 0px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: all .2s;
+}
+
+form.ks-cboxtags li label {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+form.ks-cboxtags li label:hover {
+    background-color: #F2F2F2;
+}
+
+form.ks-cboxtags li label::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    padding: 2px 6px 2px 2px;
+    content: '\f067';
+    transition: transform .3s ease-in-out;
+}
+
+form.ks-cboxtags li input[type="checkbox"]:checked + label::before {
+    content: '\f00c';
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
+}
+
+form.ks-cboxtags li input[type="checkbox"]:checked + label {
+    border: 2px solid #0071E3;
+    background-color: #0071E3;
+    color: #fff;
+    transition: all .2s;
+}
+
+form.ks-cboxtags li input[type="checkbox"]:checked + label:hover {
+    border: 2px solid #3d8ee1;
+    background-color: #3d8ee1;
+}
+
+form.ks-cboxtags li input[type="checkbox"] {
+  display: absolute;
+}
+form.ks-cboxtags li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+
+form.ks-cboxtags li input[type="checkbox"]:focus + label {
+  /*if you want most recently clicked */
+}
+
+.cards {
+    grid-column: 2 / span 12;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(auto, 60px));
+    grid-gap: 40px;
+    padding: 0px 0;
+}
+
+.card {
+    grid-column-end: span 4;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: .5rem .5rem 2rem #aaaaaa;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.4s ease 0s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card__title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    line-height: 55px;
+    font-weight: 700;
+    color: #17141d;
+    margin-bottom: 0px;
+    padding: 20px;
+}
+
+.card__title h1:hover {
+    background: linear-gradient(90deg, #0487E2, #2882de);
+    text-shadow: none;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card__content {
+    padding: 20px;
+}
+
+.card__section {
+    display: flex;
+    align-self: end;
+    align-items: center;
+}
+
+.card__desc {
+    font-family: 'Poppins', sans-serif;
+    color: #00b053;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 1px;
+}
+
+.text--bold {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    line-height: 35px;
+    font-Weight: 500;
+    color: #1F487E;
+    display: inline;
+}
+
+.text--reg {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #376996;
+    display: inline;
+}
+
+.text--light {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: #00B349;
+}
+
+@media only screen and (max-width: 1000px) {
+    .card {
+        grid-column-end: span 6;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    main {
+        grid-gap: 20px;
+    }
+    .card {
+        grid-column-end: span 12;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    main {
+        grid-template-columns: 10px repeat(6, 1fr) 10px;
+        grid-gap: 10px;
+    }
+    .cards {
+        grid-column: 2 / span 6;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 20px;
+    }
+    .card {
+        grid-column-end: span 6;
+    }
+}

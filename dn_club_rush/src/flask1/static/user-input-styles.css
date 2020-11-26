@@ -1,0 +1,206 @@
+.user-input__container {
+    width: 100%;
+    min-height: 150px;
+    margin: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.user-input__wrap {
+    width: 100%;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 42px 30px 45px 30px;
+}
+
+.user-input__form {
+    width: 100%;
+}
+
+.user-input__title {
+    display: block;
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 39px;
+    color: #333333;
+    line-height: 1.2;
+    text-align: center;
+    padding-bottom: 19px;
+}
+
+.user-input__desc {
+    display: block;
+    font-family: 'Poppins';
+    font-weight: 300;
+    font-size: 14px;
+    color: #333333;
+    line-height: 0;
+    text-align: center;
+    padding-bottom: 34px;
+}
+
+.user-input {
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid #d9d9d9;
+    padding-bottom: 13px;
+    margin-bottom: 14px;
+}
+
+.user-input-table {
+    text-align: left;
+    width: 100%;
+}
+
+.label-input {
+    font-family: 'Poppins';
+    display: inline;
+    font-weight: 500;
+    font-size: 13px;
+    color: #666666;
+    line-height: 1.5;
+    padding-left: 5px;
+}
+
+.input {
+    display: inline;
+    width: 100%;
+    background: transparent;
+    font-family: 'Poppins';
+    font-weight: 100;
+    font-size: 18px;
+    color: #333333;
+    line-height: 2.0;
+    padding: 0 5px;
+}
+
+.focus-input {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.focus-input::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+    background: #7f7f7f;
+}
+
+textarea.input {
+    min-height: 110px;
+    padding-top: 9px;
+    padding-bottom: 13px; 
+}
+
+.input:focus + .focus-input::before {
+    width: 100%;
+}
+
+.has-val.input + .focus-input::before {
+    width: 100%;
+}
+
+.user-button__container {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 0px;
+}
+
+.user-button__wrap {
+    width: 50%;
+    max-width: 160px;
+    display: block;
+    position: relative;
+    z-index: 1;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.user-button__bg {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: #0071E3;
+    /*
+    background: -webkit-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+    background: -o-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+    background: -moz-linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+    background: linear-gradient(left, #00dbde, #fc00ff, #00dbde, #fc00ff);
+    */
+    top: 0;
+    left: -100%;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.user-button {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 50px;
+    font-family: 'Poppins';
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    color: black;
+    line-height: 1.2;
+}
+
+.user-button::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+    font-size: 18px;
+    padding: 0px 0px 1px 10px;
+    content: '\f30b';
+}
+
+.user-button:hover {
+    transition: all 0.4s;
+    color: white;
+}
+
+.user-button__wrap:hover .user-button__bg {
+    left: 0;
+}
+
+@media (max-width: 576px) {
+    .wrap-contact {
+      padding: 72px 15px 65px 15px;
+    }
+}
