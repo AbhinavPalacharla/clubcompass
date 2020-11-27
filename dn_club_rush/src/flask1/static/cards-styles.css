@@ -98,6 +98,15 @@ main {
     font-weight: 400;
     color: #376996;
     display: inline;
+}
+
+.text--email {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #376996;
+    display: inline;
     overflow-wrap: break-word;
     word-break: break-all;
 }

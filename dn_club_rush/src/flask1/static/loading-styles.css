@@ -117,12 +117,6 @@ form.cboxtags li label {
     }
 }
 
-.title, .sub {
-    animation: fadeInUp ease 1.6s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
 .contact {
     animation: fadeInLeft ease 1.6s;
     animation-iteration-count: 1;
@@ -159,4 +153,9 @@ form.cboxtags li label {
     100% {
         transform: translateY(0px);
     }
+}
+
+.no-club {
+    animation: fadeInUp ease-in-out 2s;
+    animation-iteration-count: 1;
 }
