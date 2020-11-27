@@ -28,7 +28,6 @@ main {
     flex-direction: column;
     background-color: white;
     box-shadow: .5rem .5rem 2rem #aaaaaa;
-    cursor: pointer;
     border-radius: 20px;
     transition: all 0.4s ease 0s;
 }
@@ -51,6 +50,7 @@ main {
     color: #17141d;
     margin-bottom: 0px;
     padding: 20px;
+    cursor: default;
 }
 
 .card__title h1:hover {
@@ -63,6 +63,7 @@ main {
 
 .card__content {
     padding: 20px;
+    padding-top: 0px;
     padding-bottom: 0px;
 }
 
@@ -97,6 +98,8 @@ main {
     font-weight: 400;
     color: #376996;
     display: inline;
+    overflow-wrap: break-word;
+    word-break: break-all;
 }
 
 .text--light {
@@ -135,6 +138,10 @@ div.sign button {
     transition: all .2s;
 }
 
+div.sign button::after {
+    content: "Signup";
+}
+
 div.sign button::before {
     display: inline-block;
     font-style: normal;
@@ -159,8 +166,14 @@ div.sign button:focus {
     padding: 10px 40px;
     border: none;
     box-shadow: 0 0 .5rem #1BD7BB80;
+    background: #4584FD;
     background: linear-gradient(160deg, #7EF29E, #4584FD);;
     color: #fff;
+    content: "";
+}
+
+div.sign button:focus::after {
+    content: "Signed Up";
 }
 
 div.sign button:focus::before {
@@ -197,4 +210,76 @@ div.sign button:focus::before {
     .card {
         grid-column-end: span 6;
     }
+}
+
+div.remove {
+    padding: 20px;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 4px;
+}
+
+div.remove button {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    border: 2px solid #8b8b8b4D;
+    color: #adadad;
+    border-radius: 25px;
+    line-height: 20px;
+    white-space: nowrap;
+    margin: auto;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    padding: 8px 40px;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+div.remove button::after {
+    content: "Remove";
+}
+
+div.remove button::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 12px;
+    padding: 2px 6px 2px 2px;
+    content: '\f067';
+    transition: transition .3s ease-in-out;
+}
+
+div.remove button:hover {
+    background-color: #F2F2F2;
+}
+
+div.remove button:focus {
+    outline: 0;
+    content: hide;
+    padding: 10px 40px;
+    border: none;
+    box-shadow: 0 0 .5rem #1BD7BB80;
+    background: #4584FD;
+    background: linear-gradient(30deg, #DC1C13, #EA4C46);;
+    color: #fff;
+    content: "";
+}
+
+div.remove button:focus::after {
+    content: "Removed";
+}
+
+div.remove button:focus::before {
+    content: '\f00c';
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
 }

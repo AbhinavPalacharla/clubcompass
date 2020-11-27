@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Compass</title>
+    <link rel="stylesheet" href="cards-styles.css">
+    <link rel="stylesheet" href="user-input-styles.css">
+    <link rel="stylesheet" href="interests-styles.css">
+    <link rel="stylesheet" href="search-styles.css">
+    <!--
+        <link rel="stylesheet" href="nav-styles.css">
+    -->
+    <link rel="stylesheet" href="navbar-styles.css">
+    <link rel="stylesheet" href="loading-styles.css">
+    <link rel="stylesheet" href="footer-styles.css">
+    <link rel="stylesheet" href="fontcss/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/png" href="fav-logo3.4-white.ico">
+</head>
+
+<body>
+    <!-------------------- NAV BAR -------------------->
+<!--
+    <div class="navbar">
+        <header>
+            <a href="home.html"><img class="logo" src="logo2-white.png" alt="logo"></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="cards.html">All Clubs</a></li>
+                    <li><a href="myclubs.html">My Clubs</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="contacts.html"><button class="nav-button">Contacts</button></a>
+        </header>
+    </div>
+-->
+
+    <!-------------------- NEW NAV BAR -------------------->
+    <header class="header">
+        <a href="home.html"><img src="logo3.4-white.png" class="logo" alt="Club Compass"></a>
+        <input class="menu-button" type="checkbox" id="menu-button"/>
+        <a href="contacts.html"><label class="contacts">Contacts</label></a>
+        <label class="menu-icon" for="menu-button"><span class="nav-icon"></span></label>
+            <ul class="menu">
+                <li><a href="home.html">Home</a></li>
+                <li class="on"><a href="cards.html">All Clubs</a></li>
+                <li><a href="myclubs.html">My Clubs</a></li>
+                <li class="mobile-contacts"><a href="contacts.html">Contacts</a></li>
+            </ul>
+    </header>
+
+    <!-------------------- USER INPUT -------------------->
+    <!--<div class="user-input__container">
+		<div class="user-input__wrap">
+			<form class="user-input__form validate-form" method="POST" action="">
+				<span class="user-input__title">
+					Find Clubs!
+                </span>
+                <p class="user-input__desc">
+                    Enter your information below. Then click submit.
+                </p>
+
+				<div class="user-input validate-input" data-validate="Name is required">
+                    <table class="user-input-table">
+                        <tr>
+                            <th><span class="label-input">First Name</span></th>
+                            <th><span class="label-input">Last Name</span></th>
+                            <th><span class="label-input">Email</span></th>
+                        </tr>
+                        <tr>
+					        <td>
+                                <input class="input" type="text" name="first" placeholder="Enter Your First Name">
+                                <span class="focus-input"></span>
+                            </td>
+                            <td>
+                                <input class="input" type="text" name="last" placeholder="Enter Your Last Name">
+                                <span class="focus-input"></span>
+                            </td>
+                            <td colspan="2">
+					            <input class="input" type="email" name="county" placeholder="Enter Your Email">
+                                <span class="focus-input"></span>
+                            </td>
+                        </tr>
+                    </table>
+				</div>
+
+				<div class="user-button__container">
+					<div class="user-button__wrap">
+						<div class="user-button__bg"></div>
+						<button class="user-button">
+							<span>
+                                Submit
+							</span>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+    </div>
+-->
+
+    <!-------------------- SEARCH BAR -------------------->
+    <div class="search-bar">
+        <div class="search-container">
+            <table class="search-elements">
+                <tr>
+                    <form class="search-form">
+                        <td>
+                            <input type="text" name="search" placeholder="Search" class="search">
+                        </td>
+                        <td>
+                            <a href="#">
+                                <i class="material-icons">
+                                    search
+                                </i>
+                            </a>
+                        </td>
+                    </form>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <!-------------------- INTEREST FILTER -------------------->
+    <div class="container">
+        <span class="cbox-title">
+            Filter by interests
+        </span>
+        <form class="cboxtags">
+          <li><input name="interests" type="checkbox" id="checkboxOne" value="Volunteering"><label for="checkboxOne">Volunteering</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxTwo" value="Computer Science"><label for="checkboxTwo">Computer Science</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxThree" value="Politics"><label for="checkboxThree">Politics</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxFour" value="Dancing"><label for="checkboxFour">Dancing</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxFive" value="Engineering"><label for="checkboxFive">Engineering</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxSix" value="Stem"><label for="checkboxSix">Stem</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxSeven" value="Language Arts"><label for="checkboxSeven">Language Arts</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxEight" value="Art"><label for="checkboxEight">Arts</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxNine" value="Competition"><label for="checkboxNine">Competition</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxTen" value="Mechanical"><label for="checkboxTen">Mechanical</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxEleven" value="Gaming"><label for="checkboxEleven">Gaming</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxTwelve" value="Comedy"><label for="checkboxTwelve">Comedy</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxThirteen" value="Helping Others"><label for="checkboxThirteen">Helping Others</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxFourteen" value="Aerospace"><label for="checkboxFourteen">Aerospace</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxFifteen" value="Math"><label for="checkboxFifteen">Math</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxSixteen" value="Sports"><label for="checkboxSixteen">Sports</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxSeventeen" value="Crafts"><label for="checkboxSeventeen">Crafts</label></li>
+        </form>
+        <button class="apply-filters">Apply</button>
+      </div>
+
+    <!-------------------- CLUB CARDS -------------------->
+    <main>
+        <section class="cards">
+            <div class="card">
+                <div class="card__title">
+                    <h1>Common Club Name</h1> 
+                </div>
+                <div class="card__content">
+                    <p class="card__section text--bold">
+                        President:
+                    </p>
+                    <p class="text--reg">
+                        Andrew Hale
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Meeting Times:
+                    </p>
+                    <p class="text--reg">
+                        Wedsnesdays: 5:00
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Location:
+                    </p>
+                    <p class="text--reg">
+                        Room 204
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Email:
+                    </p>
+                    <p class="text--reg">
+                        thisidiothasareallylongemailfornoreason@gmail.com
+                    </p>
+                    <br>
+                    <br>
+                        <p class="card__desc">
+                            Description:
+                        </p>
+                        <p class="text--light">
+                            We design and build rockets. If you are intrested in aerospace engineering, you have a place here!
+                        </p>
+                    </div>
+                    <div class="sign">
+                        <button id="signup"></button>
+                    </div> 
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__title">
+                    <h1>Basic Club Name</h1> 
+                </div>
+                <div class="card__content">
+                    <p class="card__section text--bold">
+                        President:
+                    </p>
+                    <p class="text--reg">
+                        Andrew Hale
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Meeting Times:
+                    </p>
+                    <p class="text--reg">
+                        Wedsnesdays: 5:00
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Location:
+                    </p>
+                    <p class="text--reg">
+                        Room 204
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Email:
+                    </p>
+                    <p class="text--reg">
+                        email123@gmail.com
+                    </p>
+                    <br>
+                    <br>
+                        <p class="card__desc">
+                            Description:
+                        </p>
+                        <p class="text--light">
+                            We design and build rockets. If you are intrested in aerospace engineering, you have a place here!
+                        </p>
+                    </div>
+                    <div class="sign">
+                        <button id="signup"></button>
+                    </div> 
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__title">
+                    <h1>This is a Club!</h1> 
+                </div>
+                <div class="card__content">
+                    <p class="card__section text--bold">
+                        President:
+                    </p>
+                    <p class="text--reg">
+                        Andrew Hale
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Meeting Times:
+                    </p>
+                    <p class="text--reg">
+                        Wedsnesdays: 5:00
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Location:
+                    </p>
+                    <p class="text--reg">
+                        Room 204
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Email:
+                    </p>
+                    <p class="text--reg">
+                        email123@gmail.com
+                    </p>
+                    <br>
+                    <br>
+                        <p class="card__desc">
+                            Description:
+                        </p>
+                        <p class="text--light">
+                            We design and build rockets. If you are intrested in aerospace engineering, you have a place here!
+                        </p>
+                    </div>
+                    <div class="sign">
+                        <button id="signup"></button>
+                    </div> 
+                </div>
+            </div>
+            <div class="card">
+                <div class="card__title">
+                    <h1>Grape games gaming club</h1> 
+                </div>
+                <div class="card__content">
+                    <p class="card__section text--bold">
+                        President:
+                    </p>
+                    <p class="text--reg">
+                        Andrew Hale
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Meeting Times:
+                    </p>
+                    <p class="text--reg">
+                        Wedsnesdays: 5:00
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Location:
+                    </p>
+                    <p class="text--reg">
+                        Room 204
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Email:
+                    </p>
+                    <p class="text--reg">
+                        email123@gmail.com
+                    </p>
+                    <br>
+                    <br>
+                        <p class="card__desc">
+                            Description:
+                        </p>
+                        <p class="text--light">
+                            We design and build rockets. If you are intrested in aerospace engineering, you have a place here!
+                        </p>
+                    </div>
+                    <div class="sign">
+                        <button id="signup"></button>
+                    </div> 
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-------------------- FOOTER -------------------->
+    <footer>
+        <p>Copyright © ClubCompass 2020 | Made with  <i class="fas fa-heart" style="color: #FF3D3D"></i> by: Andrew Hale, Abhinav Palacharla, and Andrew de la Pena</p>
+    </footer>
+</body>
+</html>

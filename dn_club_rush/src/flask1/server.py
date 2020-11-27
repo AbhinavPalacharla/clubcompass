@@ -11,8 +11,12 @@ import sys
 
 app = Flask(__name__, static_folder='./static')
 
+@app.route('/')
+def index():
+	return redirect(url_for("delnorte"))
+
 @app.route('/delnorte')
-def home():
+def delnorte():
 	return render_template("home.html")
 
 @app.route('/delnorte/my_clubs', methods=["POST", "GET"])

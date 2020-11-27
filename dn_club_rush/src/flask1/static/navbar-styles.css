@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+}
+
+.header .logo {
+    float: left;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 10px 0px;
+    margin-left: 11%;
+}
+
+.header {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000D4;
+    box-shadow: 1px 1px 4px 0 #0000001A;
+    backdrop-filter: blur(5px);
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+}
+
+.header a {
+    color: #fff;
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.header ul a {
+    display: block;
+    padding: 20px;
+    border-right: 1px solid #aaa;
+    border-top: 2px solid #aaaaaaAD;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+}
+
+.header ul a:hover {
+    color: #1b7af6;
+}
+
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.header .menu-icon {
+    padding: 28px 20px;
+    margin-right: 11%;
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+
+.header .menu-icon .nav-icon {
+    background: #fff;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-out;
+}
+
+.header .menu-icon .nav-icon:before {
+    background: #fff;
+    content:"";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 5px;
+    transition: all .2s ease-out;
+}
+
+.header .menu-icon .nav-icon:after {
+    background: #fff;
+    content:"";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -5px;
+    transition: all .2s ease-out;
+}
+
+.header .menu-button {
+    display: none;
+}
+
+.header .menu-button:checked ~ .menu {
+    max-height: 318px;
+}
+
+.header .menu-button:checked ~ .menu-icon .nav-icon {
+    background: transparent;
+}
+
+.header .menu-button:checked ~ .menu-icon .nav-icon:before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.header .menu-button:checked ~ .menu-icon .nav-icon:after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.header .contacts {
+    display: none;
+}
+
+@media (min-width:767px) {
+    .header li {
+        float: left;
+    }
+    .header li a {
+        padding: 20px 30px;
+        border: none;
+    }
+    .header .menu {
+        clear: none;
+        display: flex;
+        justify-content: center;
+        max-height: none;
+    }
+
+    .header .contacts {
+        display: flex;
+        background-color: #0071E3;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 50px;
+        transition: all 0.3s ease 0s;
+        text-decoration: none;
+        float: right;
+        margin-top: 10px;
+        margin-right: 11%;
+    }
+    
+    .header .contacts:hover {
+        background-color: #0071E3CC;
+    }
+
+    .header .menu-icon {
+        display: none;
+    }
+    
+    .mobile-contacts {
+        display: none;
+    }
+}
+
+.on {
+    background-color: #00000040;
+    transition: all 0.3s ease 0s;
+}

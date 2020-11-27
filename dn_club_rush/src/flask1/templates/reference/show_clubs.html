@@ -3,33 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Del Norte Clubs</title>
+    <title>Club Compass</title>
     <link rel="stylesheet" href="../static/cards-styles.css">
     <link rel="stylesheet" href="../static/user-input-styles.css">
     <link rel="stylesheet" href="../static/interests-styles.css">
+    <link rel="stylesheet" href="../static/search-styles.css">
+    <link rel="stylesheet" href="../static/nav-styles.css">
+    <link rel="stylesheet" href="../static/loading-styles.css">
+    <link rel="stylesheet" href="../static/footer-styles.css">
     <link rel="stylesheet" href="../static/fontcss/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
+    <!-------------------- NAV BAR -------------------->
+    <div class="navbar">
+        <header>
+            <a href="home.html"><img class="logo" src="" alt="logo"></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/delnorte">Home</a></li>
+                    <li><a href="/delnorte/find_clubs">Find Clubs</a></li>
+                    <li><a href="/delnorte/my_clubs">My Clubs</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="#"><button class="nav-button">Contacts</button></a>
+        </header>
+    </div>
+
+    <!-------------------- SEARCH BAR -------------------->
+    <div class="search-bar">
+        <div class="search-container">
+            <table class="search-elements">
+                <tr>
+                    <form class="search-form" action="#" method="POST">
+                        <td>
+                            <input type="text" name="search" placeholder="Search" class="search">
+                        </td>
+                        <td>
+                            <a href="#">
+                                <i class="material-icons">
+                                    search
+                                </i>
+                            </a>
+                        </td>
+                        <input type="submit" style="display:none"/>
+                    </form>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+
+    <!-------------------- INTEREST FILTER -------------------->
     <div class="container">
-        <span class="cbox-title">
+        <!-- <span class="cbox-title">
             Filter by interests
-        </span>
+        </span> -->
         <form class="cboxtags" action="#" method="POST">
             {% for i in interest_list %}
             <li><input name="interests" type="checkbox" id="{{ i.get('name') }}" value="{{ i.get('name') }}"><label for="{{ i.get('name') }}">{{ i.get('name') }}</label></li>
             {% endfor %}
-            <button class="apply-filters">Apply</button>
+            <button class="apply-filters">Apply Filters</button>
         </form>
       </div>
+
+    <!-------------------- CLUB CARDS -------------------->
     <main>
         <section class="cards">
             {% for i in clubs %}
             <div class="card">
                 <div class="card__title">
-                    <h1 id="club"> {{ i.get("name") }} </h1> 
+                    <h1> {{ i.get("name") }} </h1> 
                 </div>
                 <div class="card__content">
                     <p class="card__section text--bold">
@@ -62,9 +111,10 @@
                         </p>
                     </div>
                     <div class="sign">
-                        <button id="signup_btn" onclick='testing("{{ firstname }}", "{{ lastname }}", "{{ email }}", "{{ i.get("name") }}")'>Signup</button>
-                    </div>
+                        <button id="{{ i.get('name') }}_signup_btn" onclick="testing('{{ firstname }}', '{{ lastname }}', '{{ email }}', '{{ i.get('name') }}')">Signup</button>
+                    </div>  
                 </div>
+                
             </div>
             {% endfor %}
 
@@ -73,7 +123,7 @@
                     $(document).ready(function() {
                         $(function() {
                             console.log("button press registered");
-
+                            
                             var info = {
                                 firstname: fname,
                                 lastname: lname,
@@ -81,17 +131,26 @@
                                 club: club_name
                             }
 
+                            console.log("button press registered")
+
                             $.ajax({
                                 type: "POST",
-                                url: "/signup_user",
+                                url: "/delnorte/signup_user",
                                 data: info
-                            });
+                            });  
                         });
+
+                        $(`#${club_name}_signup_btn`).prop('disabled', true);
+
                     });
                 }
             </script>
 
         </section>
     </main>
+    <!-------------------- FOOTER -------------------->
+    <footer>
+        <p>Copyright © ClubCompass 2020 | Made with  <i class="fas fa-heart" style="color: #FF3D3D"></i> by: Andrew Hale, Abhinav Palacharla, and Andrew de la Pena</p>
+    </footer>
 </body>
 </html>

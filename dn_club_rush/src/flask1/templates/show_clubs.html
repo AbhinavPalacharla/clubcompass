@@ -8,30 +8,31 @@
     <link rel="stylesheet" href="../static/user-input-styles.css">
     <link rel="stylesheet" href="../static/interests-styles.css">
     <link rel="stylesheet" href="../static/search-styles.css">
-    <link rel="stylesheet" href="../static/nav-styles.css">
+    <!-- <link rel="stylesheet" href="../static/nav-styles.css"> -->
+    <link rel="stylesheet" href="../static/navbar-styles.css">
     <link rel="stylesheet" href="../static/loading-styles.css">
     <link rel="stylesheet" href="../static/footer-styles.css">
     <link rel="stylesheet" href="../static/fontcss/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../static/fav-logo34-white.ico">
 </head>
 
 <body>
-    <!-------------------- NAV BAR -------------------->
-    <div class="navbar">
-        <header>
-            <a href="home.html"><img class="logo" src="" alt="logo"></a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="/delnorte">Home</a></li>
-                    <li><a href="/delnorte/find_clubs">Find Clubs</a></li>
-                    <li><a href="/delnorte/my_clubs">My Clubs</a></li>
-                </ul>
-            </nav>
-            <a class="cta" href="#"><button class="nav-button">Contacts</button></a>
-        </header>
-    </div>
+    <!-------------------- NEW NAV BAR -------------------->
+    <header class="header">
+        <a href="/delnorte"><img src="../static/logo34-white.png" class="logo" alt="Club Compass"></a>
+        <input class="menu-button" type="checkbox" id="menu-button"/>
+        <a href="/delnorte/contact"><label class="contacts">Contacts</label></a>
+        <label class="menu-icon" for="menu-button"><span class="nav-icon"></span></label>
+            <ul class="menu">
+                <li class="on"><a href="/delnorte">Home</a></li>
+                <li><a href="/delnorte/find_clubs">Find Clubs</a></li>
+                <li><a href="/delnorte/my_clubs">My Clubs</a></li>
+                <li class="mobile-contacts"><a href="/delnorte/contact">Contacts</a></li>
+            </ul>
+    </header>
 
     <!-------------------- SEARCH BAR -------------------->
     <div class="search-bar">
@@ -68,9 +69,10 @@
             {% for i in interest_list %}
             <li><input name="interests" type="checkbox" id="{{ i.get('name') }}" value="{{ i.get('name') }}"><label for="{{ i.get('name') }}">{{ i.get('name') }}</label></li>
             {% endfor %}
+            <br>
             <button class="apply-filters">Apply Filters</button>
         </form>
-      </div>
+    </div>
 
     <!-------------------- CLUB CARDS -------------------->
     <main>
@@ -111,43 +113,57 @@
                         </p>
                     </div>
                     <div class="sign">
-                        <button id="signup_btn" onclick="testing('{{ firstname }}', '{{ lastname }}', '{{ email }}', '{{ i.get('name') }}')">Signup</button>
-                    </div> 
+                        <button id="{{ i.get('_id') }}_signup_btn" type="button"></button>
+                    </div>  
                 </div>
                 
             </div>
-            {% endfor %}
 
             <script type="text/javascript">
-                function testing(fname, lname, email_addr, club_name) {
-                    $(document).ready(function() {
-                        $(function() {
-                            console.log("button press registered");
-                            
-                            var info = {
-                                firstname: fname,
-                                lastname: lname,
-                                email: email_addr,
-                                club: club_name
-                            }
+            
+                $(document).ready(function() {
+                    $("#{{ i.get('_id') }}_signup_btn").on('click', function() {
+                        console.log("button press registered");
+                        
+                        var info = {
+                            firstname: "{{ firstname }}",
+                            lastname: "{{ lastname }}",
+                            email: "{{ email }}",
+                            club: "{{ i.get('name') }}"
+                        }
 
-                            console.log("button press registered")
-
-                            $.ajax({
-                                type: "POST",
-                                url: "/delnorte/signup_user",
-                                data: info
-                            });  
+                        $.ajax({
+                            type: "POST",
+                            url: "/delnorte/signup_user",
+                            data: info
                         });
-                    });
-                }
-            </script>
+                        
+                        // $(this).on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
+                        //     $(this).delay(1000).queue(function() {
+                        //         $(this).attr('disabled', true).dequeue();
+                        //         $(this).addClass('finalButton').dequeue();
+                        //     });
+                        // });
 
+                        // $(this).delay(1000).queue(function() {
+                        //     //$(this).attr('disabled', true).dequeue();
+                        //     $(this).addClass('finalButton').dequeue();
+                        //     $(this).prop('disabled', true).dequeue();
+                        // });
+                        // $(this).removeClass();
+                        // $(this).addClass('finalButton');
+
+                        $(this).prop('disabled', true)
+                    });
+                });
+                
+            </script>
+            {% endfor %}
         </section>
     </main>
     <!-------------------- FOOTER -------------------->
     <footer>
-        <p>Copyright © ClubCompass 2020 | Made with  <i class="fas fa-heart" style="color: #FF3D3D"></i> by: Andrew Hale, Abhinav Palacharla, and Andrew de la Pena</p>
+        <p>Copyright © ClubCompass 2020 | Made with  <i class="fas fa-heart" style="color: #FF3D3D"></i> by: Andrew Hale, Abhinav Palacharla, Andrew de la Pena, and Ashika Palacharla</p>
     </footer>
 </body>
 </html>
