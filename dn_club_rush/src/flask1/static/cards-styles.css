@@ -169,7 +169,7 @@ div.sign button:hover {
     background-color: #F2F2F2;
 }
 
-div.sign button:focus {
+div.sign button:disabled, button[disabled] {
     outline: 0;
     content: hide;
     padding: 10px 40px;
@@ -181,15 +181,38 @@ div.sign button:focus {
     content: "";
 }
 
-div.sign button:focus::after {
+div.sign button:disabled::after {
     content: "Signed Up";
 }
 
-div.sign button:focus::before {
+div.sign button:disabled::before {
     content: '\f00c';
     transform: rotate(-360deg);
     transition: transform .3s ease-in-out;
 }
+/*---------------*/
+/* div.sign-disabled button {
+    outline: 0;
+    content: hide;
+    padding: 10px 40px;
+    border: none;
+    box-shadow: 0 0 .5rem #1BD7BB80;
+    background: #4584FD;
+    background: linear-gradient(160deg, #7EF29E, #4584FD);;
+    color: #fff;
+    content: "";
+    cursor: disabled;
+}
+
+div.sign-disabled button::after {
+    content: "Signed Up";
+}
+
+div.sign-disabled button::before {
+    content: '\f00c';
+    transform: rotate(-360deg);
+    transition: transform .3s ease-in-out;
+} */
 
 @media only screen and (max-width: 1000px) {
     .card {

@@ -244,13 +244,6 @@ def search_bar(query_string):
 		query = f".*{i}.*"
 		print(f"query in search for loop: {query}", file=sys.stderr)
 	
-		#matches = db.club_info.find({"name": {"$regex": query, "$options": "-i"}, "president": {"$regex": query, "$options": "-i"}, "staff": {"$regex": query, "$options": "-i"}, "email": {"$regex": query, "$options": "-i"}, "meeting_times": {"$regex": query, "$options": "-i"}, "description": {"$regex": query, "$options": "-i"}, "interest1": {"$regex": query, "$options": "-i"}, "interest2": {"$regex": query, "$options": "-i"}, "interest3": {"$regex": query, "$options": "-i"}})
-		# matches = db.club_info.find({"name": {"$regex": query, "$options": "-i"}})
-		# print(f"matches: {list(matches)}", file=sys.stderr)
-		# matches_list = list(matches)
-		# print(f"matches_list: {matches_list}", file=sys.stderr)
-		# initial_club_list.extend(matches_list)
-		# print(f"initial club list in loop: {initial_club_list}", file=sys.stderr)
 		initial_club_list.extend(list(db.club_info.find({"name": {"$regex": query, "$options": "-i"}})))
 		initial_club_list.extend(list(db.club_info.find({"president": {"$regex": query, "$options": "-i"}})))
 		initial_club_list.extend(list(db.club_info.find({"staff": {"$regex": query, "$options": "-i"}})))
@@ -260,10 +253,6 @@ def search_bar(query_string):
 		initial_club_list.extend(list(db.club_info.find({"interest1": {"$regex": query, "$options": "-i"}})))
 		initial_club_list.extend(list(db.club_info.find({"interest2": {"$regex": query, "$options": "-i"}})))
 		initial_club_list.extend(list(db.club_info.find({"interest3": {"$regex": query, "$options": "-i"}})))
-		# for j in matches:
-		# 	print(f"appending: {j}", file=sys.stderr)
-		# 	initial_club_list.append(j)
-		# 	print(f"appended: {j}", file=sys.stderr)
 
 	print(f"initial club list: {initial_club_list}", file=sys.stderr)
 

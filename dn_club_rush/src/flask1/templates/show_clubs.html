@@ -112,7 +112,7 @@
                             {{ i.get("description") }}
                         </p>
                     </div>
-                    <div class="sign">
+                    <div class="sign" id="{{ i.get('_id') }}_div">
                         <button id="{{ i.get('_id') }}_signup_btn" type="button"></button>
                     </div>  
                 </div>
@@ -153,7 +153,10 @@
                         // $(this).removeClass();
                         // $(this).addClass('finalButton');
 
-                        $(this).prop('disabled', true)
+                        //$(this).prop('disabled', true)
+                        document.getElementById("{{ i.get('_id') }}_signup_btn").disabled = true;
+                        //$("#{{ i.get('_id') }}_div").removeClass();
+                        //$("#{{ i.get('_id') }}_div").addClass("sign-disabled");
                     });
                 });
                 
