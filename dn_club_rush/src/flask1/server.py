@@ -204,6 +204,10 @@ def update_clubs():
 	
 	return "failed"
 
+@app.route('/delnorte/contact')
+def contact():
+	return render_template("contacts.html")
+
 if __name__ == "__main__":
 	app.secret_key = "super_secret_key_123%^&"
 	app.run(host="0.0.0.0", debug=True, port=5000)
