@@ -41,8 +41,12 @@
     transition: all 0.3s ease 0s;
 }
 
-.header ul a:hover {
+.header .menu ul a:hover {
     color: #1b7af6;
+}
+
+.header .home-menu ul a:hover {
+    color: #c1c1c1;
 }
 
 .header .menu {
@@ -127,7 +131,8 @@
     .header .menu {
         clear: none;
         display: flex;
-        justify-content: center;
+        /* justify-content: center; */
+        float: right;
         max-height: none;
     }
 
@@ -146,6 +151,17 @@
     
     .header .contacts:hover {
         background-color: #0071E3CC;
+        color: #fff;
+    }
+
+    .header .home-contacts {
+        background-color: transparent;
+        transition: all 0.3s ease 0s;
+    }
+
+    .header .home-contacts:hover {
+        background-color: transparent;
+        color: #c1c1c1;
     }
 
     .header .menu-icon {
@@ -161,3 +177,10 @@
     background-color: #00000040;
     transition: all 0.3s ease 0s;
 }
+
+.home-nav {
+    background-color: transparent;
+    box-shadow: none;
+    position: absolute;
+}
+
