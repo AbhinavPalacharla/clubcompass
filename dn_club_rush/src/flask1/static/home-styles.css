@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 * {
     margin-top: 0;
 }
@@ -9,7 +12,27 @@
     font-weight: 700;
     font-size: 30px;
 }
+.getstarted-button {
+  background-color: white;
+  border: none;
+  color: #6978ff;
+  padding: 15px 58px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 25px;
+  font-weight: 800;
+  transition-duration: 0.5s;
+}
 
+.getstarted-button:hover {
+  color: white;
+    background-color: #6978ff;
+      text-decoration: none;
+}
 .sub {
     font-weight: 100;
     font-size: 20px;
@@ -17,16 +40,55 @@
 }
 
 .bg-image {
-    background-image: url('../static/cc-bg-full6.png');
-    background-position: bottom;
+    background-image: url('../static/media/assets_Web Viewer-05.png');
     background-repeat: no-repeat;
     background-color: #ffffff;
-    background-size: 1920px 1211px;
     width: 100%;
     height: 100%;
-    padding-bottom: 650px;
+    padding-bottom: 3600px;
+    display: block;
+}
+.card-title-text {
+    text-align: left; 
+    color:#6978ff; 
+    position: relative; 
+    left: 20px; 
+    top: 120px; 
+    font-weight:800;
+    font-size:70px;
+}
+.card-info-text{
+    text-align: left; 
+    color:#bababa; 
+    position: relative; 
+    left: 20px; 
+    top: 120px; 
+    font-weight:400;
+    font-size:20px;
+}
+.card-button-mine {
+  background-color: #6978ff;
+  border: none;
+  color: white;
+  padding: 15px 58px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 22px;
+  font-weight: 800;
+  transition-duration: 0.5s;
+  position: relative; 
+  top:260px;
 }
 
+.card-button-mine:hover {
+  color: white;
+    background-color: #5163af;
+      text-decoration: none;
+}
 @media (max-width: 767px) {
     .bg-image {
         background-image: url('');
