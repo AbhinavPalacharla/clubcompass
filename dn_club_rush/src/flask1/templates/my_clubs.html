@@ -91,44 +91,43 @@
                         </p>
                     </div>
                     <div class="remove">
-                        <button id="remove" onclick="testing('{{ firstname }}', '{{ lastname }}', '{{ email }}', '{{ i.get('name') }}')"></button>
+                        <button id="{{ i.get('_id') }}_remove_btn" type="button"></button>
                     </div> 
                 </div>
                 
             </div>
-            {% endfor %}
 
             <script type="text/javascript">
-                function testing(fname, lname, email_addr, club_name) {
-                    $(document).ready(function() {
-                        $(function() {
-                            console.log("button press registered");
-                            
-                            var info = {
-                                firstname: fname,
-                                lastname: lname,
-                                email: email_addr,
-                                club: club_name
-                            }
+                $(document).ready(function() {
+                    $("#{{ i.get('_id') }}_remove_btn").on('click', function() {
+                        console.log("button press registered");
+                        
+                        var info = {
+                            firstname: "{{ firstname }}",
+                            lastname: "{{ lastname }}",
+                            email: "{{ email }}",
+                            club: "{{ i.get('name') }}"
+                        }
 
-                            console.log("button press registered")
-
-                            $.ajax({
-                                type: "POST",
-                                url: "/delnorte/remove_user",
-                                data: info
-                            });  
+                        $.ajax({
+                            type: "POST",
+                            url: "/delnorte/remove_user",
+                            data: info
                         });
+
+                        document.getElementById("{{ i.get('_id') }}_remove_btn").disabled = true;
                     });
-                }
+                });
+
             </script>
+            {% endfor %}
 
         </section>
     </main>
 
     <!-------------------- FOOTER -------------------->
     <footer>
-        <p>Copyright © ClubCompass 2020 | Made with  <i class="fas fa-heart" style="color: #FF3D3D"></i> by: Andrew Hale, Abhinav Palacharla, Andrew de la Pena, and Ashika Palacharla</p>
+        <p>Made with  <i class="fas fa-heart" style="color: #FF3D3D"></i> by: Andrew Hale, Abhinav Palacharla, Andrew de la Pena, and Ashika Palacharla</p>
     </footer>
 </body>
 </html>

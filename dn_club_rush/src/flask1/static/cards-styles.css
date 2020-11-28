@@ -294,7 +294,7 @@ div.remove button:hover {
     background-color: #F2F2F2;
 }
 
-div.remove button:focus {
+div.remove button:disabled {
     outline: 0;
     content: hide;
     padding: 10px 40px;
@@ -306,11 +306,11 @@ div.remove button:focus {
     content: "";
 }
 
-div.remove button:focus::after {
+div.remove button:disabled::after {
     content: "Removed";
 }
 
-div.remove button:focus::before {
+div.remove button:disabled::before {
     content: '\f00c';
     transform: rotate(-360deg);
     transition: transform .3s ease-in-out;
