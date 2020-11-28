@@ -9,8 +9,8 @@ footer {
     margin-bottom: 0;
 }
 
-footer.home {
-    margin-top: 0px;
+footer.home-footer {
+    margin: 0px;
 }
 
 @media (max-width: 767px) {
