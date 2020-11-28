@@ -40,12 +40,12 @@ html {
 }
 
 .bg-image {
-    background-image: url('../static/media/assets_Web Viewer-05.png');
+    background-image: url('../static/media/Final_BG_Web Viewer-05.png');
     background-repeat: no-repeat;
     background-color: #ffffff;
     width: 100%;
     height: 100%;
-    padding-bottom: 3600px;
+    padding-bottom: 1600px;
     display: block;
 }
 .card-title-text {
@@ -64,24 +64,25 @@ html {
     left: 20px; 
     top: 120px; 
     font-weight:400;
-    font-size:20px;
+    font-size:23px;
+    margin-right: 60px;
 }
 .card-button-mine {
   background-color: #6978ff;
   border: none;
   color: white;
-  padding: 15px 58px;
+  padding: 15px 65px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: 30px;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 22px;
+  border-radius: 28px;
   font-weight: 800;
   transition-duration: 0.5s;
   position: relative; 
-  top:260px;
+  top:210px;
 }
 
 .card-button-mine:hover {
