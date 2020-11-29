@@ -498,6 +498,9 @@ html {
     margin-left: 0;
     font-size: 15px;
   }
+  .card1-info-text {
+    margin-bottom:6%;
+  }
 
   .card2-info-text {
     margin-top: 2%;
@@ -506,7 +509,7 @@ html {
   }
 
   .card-button-mine {
-    margin-top: 0px;
+    margin-top: 2%;
     padding: 7px 65px;
     font-size: 20px;
   }
