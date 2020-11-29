@@ -18,53 +18,39 @@ def sign_user(firstname, lastname, email, club):
 	
 	club_sheet = club_signup.worksheet(club)
 
-	try: 
-		club_sheet.find(email)
-		return "Err: already signed up"
+	# try: 
+	# 	club_sheet.find(email)
+	# 	return "Err: already signed up"
 	
-	except:
+	# except:
 		#raises exception if cell not found (user is not signed up for club yet)
-		entry = [firstname, lastname, email]
-		club_sheet.append_row(entry)
 
-		mongoclient = MongoClient("db", 27017)
-		db = mongoclient.signups
+	mongoclient = MongoClient("db", 27017)
+	db = mongoclient.signups
 
-		x = list(db.signup_list.find())
-		print(f"x is: {x}", file=sys.stderr)
+	x = list(db.signup_list.find())
+	print(f"x is: {x}", file=sys.stderr)
 
-		if list(db.signup_list.find({"email": email})) != []:
-			print("inside if #1", file=sys.stderr)
-			entry = list(db.signup_list.find({"email": email}))
-			print(f"entry: {entry}", file=sys.stderr)
-			print("flag1", file=sys.stderr)
-			updated_clubs = entry[0].get("clubs")
-			print("flag2", file=sys.stderr)
-			updated_clubs.append(club)
-			print("flag3", file=sys.stderr)
-			
-			query = {"email": email}
-			change_val = {"$set": {"clubs": updated_clubs}}
-			
-			db.signup_list.update_one(query, change_val)
-			print("flag4", file=sys.stderr)
+	if list(db.signup_list.find({"email": email})) != []:
+		entry = list(db.signup_list.find({"email": email}))
+		updated_clubs = entry[0].get("clubs")
+		updated_clubs.append(club)
+		
+		query = {"email": email}
+		change_val = {"$set": {"clubs": updated_clubs}}
+		
+		db.signup_list.update_one(query, change_val)
 
-		elif list(db.signup_list.find({"email": email})) == []:
-			print("in else#1", file=sys.stderr)
-			entry = db.signup_list.insert_one({"email": email, "clubs": [club]})
-			print("else1 good", file=sys.stderr)
-		return "signed up"
+	elif list(db.signup_list.find({"email": email})) == []:
+		entry = db.signup_list.insert_one({"email": email, "clubs": [club]})
+
+	entry = [firstname, lastname, email]
+	club_sheet.append_row(entry)
+
 
 def delete_user(firstname, lastname, email, club):
 	scope = ["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth/spreadsheets',"https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive"]
 	creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
-	client = gspread.authorize(creds)
-	
-	club_signup = client.open("club_signup_2020")
-	club_sheet = club_signup.worksheet(club)
-	cell = club_sheet.find(email)
-
-	club_sheet.delete_row(cell.row)
 
 	mongoclient = MongoClient("db", 27017)
 	db = mongoclient.signups
@@ -77,6 +63,14 @@ def delete_user(firstname, lastname, email, club):
 	change_val = {"$set": {"clubs": updated_clubs}}
 
 	db.signup_list.update_one(query, change_val)
+
+	client = gspread.authorize(creds)
+	
+	club_signup = client.open("club_signup_2020")
+	club_sheet = club_signup.worksheet(club)
+	cell = club_sheet.find(email)
+
+	club_sheet.delete_row(cell.row)
 
 def get_signups(email):
 	client = MongoClient("db", 27017)
