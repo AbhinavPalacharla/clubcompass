@@ -18,16 +18,10 @@
     animation-fill-mode: forwards;
 }
 
-.card:nth-child(4) {
+.card {
     animation: fadeInDown ease 1.8s;
     animation-iteration-count: 1;
-    animation-delay: .4s;
-    animation-fill-mode: forwards;
-}
-
-.card {
-    animation: fadeIn ease 1.8s;
-    animation-iteration-count: 1;
+    animation-delay: .6s;
     animation-fill-mode: forwards;
 }
 

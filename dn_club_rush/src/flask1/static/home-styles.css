@@ -20,8 +20,10 @@ html {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  float: left;
   font-size: 30px;
-  margin: 4px 2px;
+  margin-left: 10%;
+  margin-top: 30px;
   cursor: pointer;
   border-radius: 25px;
   font-weight: 800;
@@ -45,15 +47,15 @@ html {
     background-color: #ffffff;
     width: 100%;
     height: 100%;
-    padding-bottom: 1600px;
+    padding-bottom: 500px;
     display: block;
 }
 .card-title-text {
     text-align: left; 
     color:#6978ff; 
     position: relative; 
-    left: 20px; 
-    top: 120px; 
+    margin-left: 20px; 
+    margin-top: 120px; 
     font-weight:800;
     font-size:70px;
 }
@@ -61,8 +63,8 @@ html {
     text-align: left; 
     color:#bababa; 
     position: relative; 
-    left: 20px; 
-    top: 120px; 
+    margin-left: 20px; 
+    margin-top: 120px; 
     font-weight:400;
     font-size:23px;
     margin-right: 60px;
@@ -77,12 +79,12 @@ html {
   display: inline-block;
   font-size: 30px;
   margin: 4px 2px;
+  margin-top: 40px;
   cursor: pointer;
   border-radius: 28px;
   font-weight: 800;
   transition-duration: 0.5s;
-  position: relative; 
-  top:210px;
+  position: relative;
 }
 
 .card-button-mine:hover {
@@ -90,20 +92,93 @@ html {
     background-color: #5163af;
       text-decoration: none;
 }
+
+.home-title {
+  font-weight: 800;
+  font-size: 100px;
+  color: white;
+  text-align: left;
+  margin-top: 50px;
+  margin-left: 10%;
+  margin-right: 30%;
+}
+
+.home-sub {
+  font-weight: 500;
+  font-size: 70px;
+  margin-top: 10px;
+}
+
+.img-fluid {
+  width: 500px;
+  border-radius: 50px;
+  position: relative;
+  margin-top: 40px;
+  margin-left: 10%;
+  background-color: #fff;
+}
+
+.card-info-text {
+  margin-top: 0px;
+}
+
+.card3 {
+  margin-top: 688px;
+}
+
 @media (max-width: 767px) {
-    .bg-image {
+    /* .bg-image {
         background-image: url('');
         background-size: 767px 696px;
         padding-bottom: 240px;
-    }
-    .title {
-        padding-top: 100px;
-        margin: 3px;
-    }
-    .sub {
-        margin: 30px;
-        margin-bottom: 0;
-        margin-top: 0;
-        
-    }
+    } */
+
+}
+
+@media (max-width: 380px) {
+  .title {
+    padding-top: 100px;
+    margin: 3px;
+}
+.sub {
+    margin: 30px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.home-title {
+  font-size: 60px;
+}
+
+.home-sub {
+  font-size: 40px;
+}
+
+.img-fluid {
+  width: 80%;
+  float: center;
+  margin: none;
+}
+
+.card-title-text {
+  font-size: 40px;
+  margin-top: 23%;
+  margin-left: 0;
+}
+
+.card-info-text {
+  margin-top: 2%;
+  margin-left: 0;
+  font-size: 15px;
+}
+
+.card-button-mine {
+  margin-top: 0px;
+  padding: 7px 65px;
+  font-size: 20px;
+}
+
+.card3 {
+  margin-top: 456px;
+}
 }
