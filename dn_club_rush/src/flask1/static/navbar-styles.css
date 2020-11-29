@@ -13,7 +13,7 @@
 
 .header {
     font-family: 'Poppins', sans-serif;
-    background-color: #0000008C;
+    background-color: #000000D4;
     box-shadow: 1px 1px 4px 0 #0000001A;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
@@ -131,6 +131,7 @@
     /* background-color: transparent;
     box-shadow: none; */
     position: absolute;
+    background-color: #0000008C;
 }
 
 @media (min-width:767px) {
