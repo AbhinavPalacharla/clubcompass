@@ -122,10 +122,10 @@
     transition: all 0.3s ease 0s;
 }
 
-.home-hover:hover {
+/* .home-hover:hover {
     background-color: #00000040;
     color: #fff;
-}
+} */
 
 .home-nav {
     /* background-color: transparent;
