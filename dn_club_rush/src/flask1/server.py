@@ -39,7 +39,7 @@ def my_clubs():
 		return render_template("my_clubs.html", clubs=clubs, firstname=firstname, lastname=lastname, email=email)
 
 	if request.method == "POST":
-		pass
+		return "you can't make a POST request to this page"
 
 @app.route('/delnorte/register', methods=["POST", "GET"])
 def register():
