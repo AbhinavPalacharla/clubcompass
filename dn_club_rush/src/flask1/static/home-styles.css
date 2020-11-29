@@ -64,7 +64,7 @@ html {
     color:#bababa; 
     position: relative; 
     margin-left: 20px; 
-    margin-top: 120px; 
+    margin-top: 0px; 
     font-weight:400;
     font-size:23px;
     margin-right: 60px;
@@ -118,15 +118,22 @@ html {
   background-color: #fff;
 }
 
-.card-info-text {
-  margin-top: 0px;
-}
-
 .card3 {
   margin-top: 688px;
 }
+
 .card1-info-text {
     margin-bottom:0px;
+}
+
+
+@media (max-width: 1920px) {
+  .card-info-text {
+    font-size:24.3px;
+  }
+  .card1-info-text {
+    margin-bottom:2%;
+  }
 }
 
 @media (max-width: 767px) {
@@ -318,6 +325,14 @@ html {
     margin-left: 4%;
     font-size: 21px;
   }
+
+  .home-title {
+    font-size: 80px;
+  }
+
+  .home-sub {
+    font-size: 50px;
+  }
 }
 
 @media (max-width: 511px) {
@@ -384,6 +399,63 @@ html {
   } 
 }
 
+
+@media (max-width: 420px) {
+  .title {
+      padding-top: 100px;
+      margin: 3px;
+  }
+  .sub {
+      margin: 30px;
+      margin-bottom: 0;
+      margin-top: 0;
+  }
+
+  .home-title {
+    font-size: 60px;
+  }
+
+  .home-sub {
+    font-size: 40px;
+  }
+
+  .img-fluid {
+    width: 80%;
+    float: center;
+    margin: none;
+    border-radius: 40px;
+  }
+
+  .card-title-text {
+    font-size: 40px;
+    margin-top: 23%;
+    margin-left: 1.8%;
+  }
+
+  .card-info-text {
+    margin-top: 2%;
+    margin-left: 1.8%;
+    font-size: 16px;
+  }
+  .card1-info-text {
+    margin-bottom:14%;
+  }
+
+  .card-button-mine {
+    margin-top: 5%;
+    padding: 7px 65px;
+    font-size: 20px;
+    border-radius: 17px;
+  }
+
+  .card3 {
+    margin-top: 495px;
+  }
+  .bg-image {
+    background-image: url('../static/media/final420-09.png');
+  }
+}
+
 @media (max-width: 380px) {
   .title {
     padding-top: 100px;
@@ -435,70 +507,5 @@ html {
 
   .card3 {
     margin-top: 456px;
-  }
-}
-
-@media (max-width: 420px) {
-  .title {
-      padding-top: 100px;
-      margin: 3px;
-  }
-  .sub {
-      margin: 30px;
-      margin-bottom: 0;
-      margin-top: 0;
-  }
-
-  .home-title {
-    font-size: 60px;
-  }
-
-  .home-sub {
-    font-size: 40px;
-  }
-
-  .img-fluid {
-    width: 80%;
-    float: center;
-    margin: none;
-    border-radius: 40px;
-  }
-
-  .card-title-text {
-    font-size: 40px;
-    margin-top: 23%;
-    margin-left: 1.8%;
-  }
-
-  .card-info-text {
-    margin-top: 2%;
-    margin-left: 1.8%;
-    font-size: 16px;
-  }
-  .card1-info-text {
-      margin-bottom:14%;
-  }
-
-  .card-button-mine {
-    margin-top: 5%;
-    padding: 7px 65px;
-    font-size: 20px;
-    border-radius: 17px;
-  }
-
-  .card3 {
-    margin-top: 495px;
-  }
-  .bg-image {
-    background-image: url('../static/media/final420-09.png');
-  }
-}
-
-@media (max-width: 1920px) {
-  .card-info-text {
-      font-size:24.3px;
-  }
-  .card1-info-text {
-      margin-bottom:2%;
   }
 }
