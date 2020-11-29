@@ -30,6 +30,7 @@ main {
     box-shadow: .5rem .5rem 2rem #aaaaaa;
     border-radius: 20px;
     transition: all 0.4s ease 0s;
+    opacity: 0;
 }
 
 .card:nth-child(1), .card:nth-child(2), .card:nth-child(3) {
