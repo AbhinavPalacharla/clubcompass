@@ -58,6 +58,7 @@ body, html {
     height: 100%;
     padding-bottom: 500px;
     display: block;
+    background-color: #3e4ae3;
 }
 .card-title-text {
     text-align: left; 
