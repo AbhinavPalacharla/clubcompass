@@ -45,6 +45,7 @@ def my_clubs():
 		email = session["email"]
 
 		firstname = firstname.capitalize()
+		lastname = lastname.capitalize()
 
 		return render_template("my_clubs.html", clubs=clubs, firstname=firstname, lastname=lastname, email=email)
 
