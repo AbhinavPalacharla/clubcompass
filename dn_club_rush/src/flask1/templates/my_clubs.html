@@ -27,7 +27,7 @@
             <ul class="menu">
                 <li><a href="/delnorte">Home</a></li>
                 <li><a href="/delnorte/find_clubs">Find Clubs</a></li>
-                <li class="on"><a href="/delnorte/my_clubs">My Clubs</a></li>
+                <li class="on"><a href="/delnorte/my_clubs">My Profile</a></li>
                 <li class="mobile-contacts"><a href="/delnorte/contact">Contacts</a></li>
             </ul>
     </header>
@@ -38,9 +38,17 @@
             {{ firstname }}'s Clubs
         </h1>
         <p class="sub">
-            The clubs you are signed up for right now.
+            Name: Bob Palacharla
+            <br>
+            Email: Bobemail@gmail.com
         </p>
     </div>
+
+    <!-------------------- LOGOUT -------------------->
+
+    <div class="logout">
+        <button class="logout-button">Logout</button>
+    </div> 
 
     <!-------------------- NO CLUBS -------------------->
     {% if clubs == [] %}
