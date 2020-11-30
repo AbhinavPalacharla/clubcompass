@@ -38,16 +38,16 @@
             {{ firstname }}'s Clubs
         </h1>
         <p class="sub">
-            Name: Bob Palacharla
+            Name: {{firstname}} {{lastname}}
             <br>
-            Email: Bobemail@gmail.com
+            Email: {{email}}
         </p>
     </div>
 
     <!-------------------- LOGOUT -------------------->
 
     <div class="logout">
-        <button class="logout-button">Logout</button>
+        <button class="logout-button" onclick="window.location.href = '/delnorte/logout';">Logout</button>
     </div> 
 
     <!-------------------- NO CLUBS -------------------->
