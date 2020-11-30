@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Del Norte Clubs</title>
+    <link rel="stylesheet" href="../static/cards-styles.css">
+    <link rel="stylesheet" href="../static/fontcss/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <form class="ks-cboxtags" action="#" method="POST">
+          <li><input name="interests" type="checkbox" id="checkboxOne" value="volunteering"><label for="checkboxOne">Volunteering</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxTwo" value="computer science"><label for="checkboxTwo">Computer Science</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxSix" value="stem"><label for="checkboxSix">Stem</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxSeven" value="Language Arts"><label for="checkboxSeven">Language Arts</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxEight" value="art"><label for="checkboxEight">Arts</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxNine" value="competition"><label for="checkboxNine">Competition</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxTen" value="LGBTQ+"><label for="checkboxTen">LGBTQ+</label></li>
+          <li><input name="interests" type="checkbox" id="checkboxEleven" value="Gaming"><label for="checkboxEleven">Gaming</label></li>
+          <input type="submit" value="Filter!">
+        </form>
+      </div>
+    <main>
+        <section class="cards">
+                {% for i in clubs %}
+                <div class="card">
+                    <div class="card__title">
+                        <h1> {{ i.get("name") }} </h1>
+                    </div>
+                    <div class="card__content">
+                        <p class="card__section text--bold">
+                            President:
+                        </p>
+                        <p class="text--reg">
+                            {{ i.get("president") }}
+                        </p>
+                        <br>
+                        <p class="card__section text--bold">
+                            Meeting Times:
+                        </p>
+                        <p class="text--reg">
+                            {{ i.get("meeting_times") }}
+                        </p>
+                        <br>
+                        <p class="card__section text--bold">
+                            Location:
+                        </p>
+                        <p class="text--reg">
+                            {{ i.get("location") }}
+                        </p>
+                        <br>
+                        <p class="card__section text--bold">
+                            Email:
+                        </p>
+                        <p class="text--reg">
+                            {{ i.get("email") }}
+                        </p>
+                        <br>
+                        <br>
+                            <p class="card__desc">
+                                Description:
+                            </p>
+                            <p class="text--light">
+                                {{ i.get("description") }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+				{% endfor %}
+        </section>
+    </main>
+</body>
+</html>

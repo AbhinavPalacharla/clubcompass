@@ -8,8 +8,8 @@ def import_clubs(spreadsheet):
     client = gspread.authorize(creds)
 
     sheet = client.open(spreadsheet)
-    club_sheet = sheet.worksheet("clubs")
+    #club_sheet = sheet.worksheet("clubs")
 
-    clubs = club_sheet.get_all_values()
+    #clubs = club_sheet.get_all_values()
 
-    return clubs
+    #return clubs
