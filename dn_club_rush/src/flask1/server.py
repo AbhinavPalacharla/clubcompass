@@ -51,9 +51,13 @@ def register():
 		lastname = request.form["lastname"]
 		email = request.form["email"]
 
-		session["firstname"] = firstname
-		session["lastname"] = lastname
-		session["email"] = email
+		lower_firstname = firstname.lower()
+		lower_lastname = lastname.lower()
+		lower_email = email.lower()
+
+		session["firstname"] = lower_firstname
+		session["lastname"] = lower_lastname
+		session["email"] = lower_email
 
 		if 'signed_up_for' not in session:
 			session["signed_up_for"] = []
