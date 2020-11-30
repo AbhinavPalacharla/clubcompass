@@ -145,6 +145,19 @@ body, html {
   }
 }
 
+@media (max-width: 1680px) {
+.bg-image {
+    background-image: url('../static/media/x1680.png');
+}
+}
+
+
+@media (max-width: 1444px) {
+.bg-image {
+    background-image: url('../static/media/x1444.png');
+}
+}
+
 @media (max-width: 1280px) {
 .bg-image {
     background-image: url('../static/media/x1280.png');
