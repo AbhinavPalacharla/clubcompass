@@ -19,6 +19,14 @@ def index():
 def delnorte():
 	return render_template("home.html")
 
+@app.route('/delnorte/logout')
+def logout():
+	session.pop("firstname", None)
+	session.pop("lastname", None)
+	session.pop("email", None)
+	
+	return redirect(url_for("delnorte"))
+
 @app.route('/delnorte/my_clubs', methods=["POST", "GET"])
 def my_clubs():
 	if "firstname" not in session or "lastname" not in session or "email" not in session:
