@@ -463,9 +463,14 @@ body, html {
     border-radius: 17px;
   }
 
+  .card1-button-mine {
+    margin-top: 0px;
+  }
+
   .card3 {
     margin-top: 495px;
   }
+
   .bg-image {
     background-image: url('../static/media/x420.png');
   }
@@ -514,6 +519,10 @@ body, html {
   .card2-info-text {
     margin-top: 2%;
     margin-left: 0;
+    font-size: 14px;
+  }
+
+  .card3-info-text {
     font-size: 14px;
   }
 
