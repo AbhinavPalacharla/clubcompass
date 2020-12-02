@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: #17141d
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr repeat(12, minmax(auto, 60px)) 1fr;
+    grid-gap: 40px;
+    padding: 60px 0;
+}
+
+.cards {
+    grid-column: 2 / span 12;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(auto, 60px));
+    grid-gap: 40px;
+    padding: 60px 0;
+}
+
+.card {
+    grid-column-end: span 4;
+    display: flex;
+    flex-direction: column;
+    background-color: #17141d;
+    box-shadow: -1rem 0 3rem #000;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.4s ease 0s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card__title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    line-height: 55px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0px;
+    padding: 20px;
+}
+
+.card__title h1:hover {
+    background: linear-gradient(90deg, #2AF598, #08B3E5);
+    text-shadow: none;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.card__content {
+    padding: 20px;
+}
+
+.card__section {
+    display: flex;
+    align-self: end;
+    align-items: center;
+}
+
+.card__desc {
+    font-family: 'Poppins', sans-serif;
+    color: #22E4AC;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 1px;
+}
+
+.text--bold {
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    line-height: 35px;
+    font-Weight: 500;
+    color: #08B3E5;
+    display: inline;
+}
+
+.text--reg {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #14C9CB;
+    display: inline;
+}
+
+.text--light {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: #22E4AC;
+}
+
+@media only screen and (max-width: 1000px) {
+    .card {
+        grid-column-end: span 6;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    main {
+        grid-gap: 20px;
+    }
+    .card {
+        grid-column-end: span 12;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    main {
+        grid-template-columns: 10px repeat(6, 1fr) 10px;
+        grid-gap: 10px;
+    }
+    .cards {
+        grid-column: 2 / span 6;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 20px;
+    }
+    .card {
+        grid-column-end: span 6;
+    }
+}

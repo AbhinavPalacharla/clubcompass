@@ -1,0 +1,52 @@
+div.sign button::before {
+    content: '\f00d';
+}
+
+.no-club {
+    font-family: 'Poppins', sans-serif;
+    display: block;
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 70px;
+    margin-bottom: 230px;
+}
+
+.logout {
+    margin-top: 30px;
+}
+
+.logout-button {
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 30px;
+    max-width: 150px;
+    margin: auto;
+    margin-top: 20px;
+    width: 100%;
+    height: 50px;
+    font-family: 'Poppins';
+    font-size: 16px;
+    background-color: #0071E3;
+    border: none;
+    color: white;
+    line-height: 1.2;
+    box-shadow: .25rem .25rem .5rem #aaaaaa;
+    transition: all .4s;
+}
+
+.logout-button:hover {
+    transform: translateY(-3px);
+    background-color: #0071E3CC;
+    box-shadow: .25rem .25rem .65rem  #aaaaaa;
+}
+
+.logout-button:active {
+    transform: translateY(-2px);
+    transform: scale(.97);
+    box-shadow: .125rem .125rem .25rem #aaaaaa;
+    transition: all .1s;
+}

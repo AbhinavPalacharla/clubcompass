@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Del Norte Clubs</title>
+    <link rel="stylesheet" href="../static/cards-styles.css">
+    <link rel="stylesheet" href="../static/user-input-styles.css">
+    <link rel="stylesheet" href="../static/interests-styles.css">
+    <link rel="stylesheet" href="../static/fontcss/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <section class="cards">
+            {% for i in clubs %}
+            <div class="card">
+                <div class="card__title">
+                    <h1> {{ i.get("name") }} </h1> 
+                </div>
+                <div class="card__content">
+                    <p class="card__section text--bold">
+                        President:
+                    </p>
+                    <p class="text--reg">
+                        {{ i.get("president") }}
+                    </p>
+                    <br>
+                    <!-- <p class="card__section text--bold">
+                        Meeting Times:
+                    </p>
+                    <p class="text--reg">
+                         i.get("meeting_times") 
+                    </p>
+                    <br> -->
+                    <p class="card__section text--bold">
+                        Location:
+                    </p>
+                    <p class="text--reg">
+                        {{ i.get("location") }}
+                    </p>
+                    <br>
+                    <p class="card__section text--bold">
+                        Email:
+                    </p>
+                    <p class="text--reg">
+                        {{ i.get("email") }}
+                    </p>
+                    <br>
+                    <br>
+                        <p class="card__desc">
+                            Description:
+                        </p>
+                        <p class="text--light">
+                            {{ i.get("description") }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+</body>
+</html>

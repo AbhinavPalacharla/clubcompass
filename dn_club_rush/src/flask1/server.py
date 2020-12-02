@@ -44,6 +44,9 @@ def my_clubs():
 		lastname = session["lastname"]
 		email = session["email"]
 
+		firstname = firstname.capitalize()
+		lastname = lastname.capitalize()
+
 		return render_template("my_clubs.html", clubs=clubs, firstname=firstname, lastname=lastname, email=email)
 
 	if request.method == "POST":
