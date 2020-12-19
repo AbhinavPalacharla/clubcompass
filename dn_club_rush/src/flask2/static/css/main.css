@@ -213,6 +213,10 @@ iframe {
   padding-left: 5px;
 }
 
+.label-small {
+  font-size: 11px;
+}
+
 .input100 {
   display: block;
   width: 100%;
