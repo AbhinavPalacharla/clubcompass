@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../static/user-input-styles.css">
     <link rel="stylesheet" href="../static/interests-styles.css">
     <link rel="stylesheet" href="../static/search-styles.css">
-    <!-- <link rel="stylesheet" href="../static/nav-styles.css"> -->
     <link rel="stylesheet" href="../static/navbar-styles.css">
     <link rel="stylesheet" href="../static/loading-styles.css">
     <link rel="stylesheet" href="../static/footer-styles.css">
@@ -20,22 +19,8 @@
 </head>
 
 <body>
-    <!-------------------- NAV BAR -------------------->
-    <!-- <div class="navbar">
-        <header>
-            <a href="home.html"><img class="logo" src="" alt="logo"></a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="/delnorte">Home</a></li>
-                    <li><a href="/delnorte/find_clubs">Find Clubs</a></li>
-                    <li><a href="/delnorte/my_clubs">My Clubs</a></li>
-                </ul>
-            </nav>
-            <a class="cta" href="#"><button class="nav-button">Contacts</button></a>
-        </header>
-    </div> -->
 
-    <!-------------------- NEW NAV BAR -------------------->
+    <!-------------------- NAV BAR -------------------->
     <header class="header">
         <a href="/delnorte"><img src="../static/logo34-white.png" class="logo" alt="Club Compass"></a>
         <input class="menu-button" type="checkbox" id="menu-button"/>
@@ -77,9 +62,6 @@
 
     <!-------------------- INTEREST FILTER -------------------->
     <div class="container">
-        <!-- <span class="cbox-title">
-            Filter by interests
-        </span> -->
         <form class="cboxtags" action="#" method="POST">
             {% for i in interest_list %}
             <li><input name="interests" type="checkbox" id="{{ i.get('name') }}" value="{{ i.get('name') }}"><label for="{{ i.get('name') }}">{{ i.get('name') }}</label></li>
@@ -152,26 +134,7 @@
                             url: "/delnorte/signup_user",
                             data: info
                         });
-                        
-                        // $(this).on('webkitAnimationEnd oanimationend msAnimationEnd animationend', function(e) {
-                        //     $(this).delay(1000).queue(function() {
-                        //         $(this).attr('disabled', true).dequeue();
-                        //         $(this).addClass('finalButton').dequeue();
-                        //     });
-                        // });
-
-                        // $(this).delay(1000).queue(function() {
-                        //     //$(this).attr('disabled', true).dequeue();
-                        //     $(this).addClass('finalButton').dequeue();
-                        //     $(this).prop('disabled', true).dequeue();
-                        // });
-                        // $(this).removeClass();
-                        // $(this).addClass('finalButton');
-
-                        //$(this).prop('disabled', true)
                         document.getElementById("{{ i.get('_id') }}_signup_btn").disabled = true;
-                        //$("#{{ i.get('_id') }}_div").removeClass();
-                        //$("#{{ i.get('_id') }}_div").addClass("sign-disabled");
                     });
                 });
                 
