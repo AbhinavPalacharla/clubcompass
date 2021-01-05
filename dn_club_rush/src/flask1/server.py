@@ -80,7 +80,6 @@ def register():
 
         if list(db.signup_list.find({"email": email})) == []:
             count_registration(lower_firstname, lower_lastname, lower_email)
-        else:
             db.signup_list.insert_one({"email": email, "clubs": []})
 
         return redirect(url_for("find_clubs"))
