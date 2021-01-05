@@ -132,6 +132,7 @@ div.sign button {
   display: inline-block;
   font-family: "Poppins", sans-serif;
   background-color: white;
+  border: 2px solid #8b8b8b4d;
   color: #adadad;
   border-radius: 25px;
   line-height: 20px;
@@ -257,6 +258,7 @@ div.remove button {
   display: inline-block;
   font-family: "Poppins", sans-serif;
   background-color: white;
+  border: 2px solid #8b8b8b4d;
   color: #adadad;
   border-radius: 25px;
   line-height: 20px;
