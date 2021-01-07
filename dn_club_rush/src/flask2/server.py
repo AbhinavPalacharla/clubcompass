@@ -78,9 +78,9 @@ def register():
         mongoclient = MongoClient("db", 27017)
         db = mongoclient.signups
 
-        if list(db.signup_list.find({"email": email})) == []:
+        if list(db.signup_list.find({"email": lower_email})) == []:
             count_registration(lower_firstname, lower_lastname, lower_email)
-            db.signup_list.insert_one({"email": email, "clubs": []})
+            db.signup_list.insert_one({"email": lower_email, "clubs": []})
 
         return redirect(url_for("find_clubs"))
 
